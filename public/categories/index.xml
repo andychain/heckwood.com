@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Categories on Heckwood — Podcast Directory</title>
+		<link>http://localhost:49872/categories/</link>
+		<description>Recent content in Categories on Heckwood — Podcast Directory</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 05 Jun 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:49872/categories/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Business</title>
+				<link>http://localhost:49872/categories/business/</link>
+				<pubDate>Fri, 05 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:49872/categories/business/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Science</title>
+				<link>http://localhost:49872/categories/science/</link>
+				<pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:49872/categories/science/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Tech</title>
+				<link>http://localhost:49872/categories/tech/</link>
+				<pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:49872/categories/tech/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>News</title>
+				<link>http://localhost:49872/categories/news/</link>
+				<pubDate>Sun, 31 May 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:49872/categories/news/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

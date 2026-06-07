@@ -1,0 +1,128 @@
+{{ define "main" }}
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/podcasts/">Podcasts</a>
+    <span>›</span>
+    <a href="/podcasts/{{ .Params.showSlug }}/">{{ .Params.showName }}</a>
+    <span>›</span>
+    <span>{{ .Title | truncate 50 }}</span>
+  </nav>
+
+  <div class="ep-page">
+
+    <!-- Episode header -->
+    <div class="ep-header">
+      <a href="/podcasts/{{ .Params.showSlug }}/" class="ep-show-link">
+        {{ with .Params.art }}
+        <img src="{{ . }}" alt="{{ $.Params.showName }}" class="ep-show-thumb" width="48" height="48" loading="lazy">
+        {{ end }}
+        <span>{{ .Params.showName }}</span>
+      </a>
+      <h1>{{ .Title }}</h1>
+      <div class="ep-header-meta">
+        <span>{{ .Params.pubDate }}</span>
+        {{ with .Params.duration }}<span>·</span><span>{{ . }}</span>{{ end }}
+        {{ with .Params.showAuthor }}<span>·</span><span>by {{ . }}</span>{{ end }}
+      </div>
+    </div>
+
+    <!-- Audio player -->
+    {{ with .Params.audioUrl }}
+    <div class="audio-player" id="audio-player">
+      <audio id="main-audio" preload="metadata">
+        <source src="{{ . }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="player-ui">
+        <div class="player-art">
+          {{ with $.Params.art }}<img src="{{ . }}" alt="" width="64" height="64">{{ end }}
+        </div>
+        <div class="player-center">
+          <div class="player-title">{{ $.Title | truncate 60 }}</div>
+          <div class="player-show">{{ $.Params.showName }}</div>
+          <div class="player-controls">
+            <button class="ctrl skip-btn" onclick="skipAudio(-30)" title="Back 30s">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+            </button>
+            <button class="ctrl play-btn" id="play-btn" onclick="toggleAudio()">
+              <svg id="play-icon" width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+            </button>
+            <button class="ctrl skip-btn" onclick="skipAudio(30)" title="Forward 30s">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+            </button>
+          </div>
+          <div class="progress-row">
+            <span class="time" id="cur-time">0:00</span>
+            <div class="progress-track" id="prog-track" onclick="seekAudio(event)">
+              <div class="progress-fill" id="prog-fill"></div>
+            </div>
+            <span class="time" id="dur-time">--:--</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ else }}
+    <div class="no-audio">Audio not available for this episode.</div>
+    {{ end }}
+
+    <!-- Episode description -->
+    {{ with .Content }}
+    <div class="ep-content">
+      <h2>About this episode</h2>
+      <div class="ep-body-text">{{ . }}</div>
+    </div>
+    {{ end }}
+
+    <!-- Back to show -->
+    <div class="ep-footer">
+      <a href="/podcasts/{{ .Params.showSlug }}/" class="btn-secondary">← All episodes of {{ .Params.showName }}</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const audio = document.getElementById('main-audio');
+const playIcon = document.getElementById('play-icon');
+const progFill = document.getElementById('prog-fill');
+let isPlaying = false;
+
+function fmt(s) {
+  if (!s || isNaN(s)) return '0:00';
+  const h = Math.floor(s/3600), m = Math.floor((s%3600)/60), sec = Math.floor(s%60);
+  return h > 0 ? `${h}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}` : `${m}:${String(sec).padStart(2,'0')}`;
+}
+
+function toggleAudio() {
+  if (isPlaying) { audio.pause(); isPlaying = false; }
+  else { audio.play(); isPlaying = true; }
+  playIcon.innerHTML = isPlaying
+    ? '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>'
+    : '<polygon points="5,3 19,12 5,21"/>';
+}
+
+function skipAudio(sec) { audio.currentTime = Math.max(0, audio.currentTime + sec); }
+
+function seekAudio(e) {
+  const track = document.getElementById('prog-track');
+  const pct = e.offsetX / track.offsetWidth;
+  if (audio.duration) audio.currentTime = pct * audio.duration;
+}
+
+audio.addEventListener('timeupdate', () => {
+  const pct = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+  progFill.style.width = pct + '%';
+  document.getElementById('cur-time').textContent = fmt(audio.currentTime);
+  document.getElementById('dur-time').textContent = fmt(audio.duration);
+});
+
+audio.addEventListener('ended', () => {
+  isPlaying = false;
+  playIcon.innerHTML = '<polygon points="5,3 19,12 5,21"/>';
+});
+</script>
+{{ end }}

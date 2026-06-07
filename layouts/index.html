@@ -1,0 +1,88 @@
+{{ define "main" }}
+
+<section class="hero">
+  <div class="container">
+    <h1>Discover great podcasts</h1>
+    <p>A curated directory of the world's best shows in tech, science, news, business and true crime. Every episode has its own page — easy to find, easy to share.</p>
+    <a href="/podcasts/" class="btn-primary">Browse all shows →</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Browse by category</h2>
+    <div class="cat-grid">
+      {{ $cats := slice
+        (dict "name" "Tech" "slug" "tech" "icon" "💻" "desc" "Software, AI, startups and the internet")
+        (dict "name" "Science" "slug" "science" "icon" "🔬" "desc" "Health, biology, physics and the natural world")
+        (dict "name" "News" "slug" "news" "icon" "📰" "desc" "Daily news and long-form journalism")
+        (dict "name" "Business" "slug" "business" "icon" "📈" "desc" "Entrepreneurship, finance and economics")
+        (dict "name" "True Crime" "slug" "crime" "icon" "🔍" "desc" "Investigative journalism and crime stories")
+      }}
+      {{ range $cats }}
+      <a href="/categories/{{ .slug }}/" class="cat-card">
+        <div class="cat-icon">{{ .icon }}</div>
+        <div>
+          <h3>{{ .name }}</h3>
+          <p>{{ .desc }}</p>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">All podcasts</h2>
+      <a href="/podcasts/" class="see-all">See all →</a>
+    </div>
+    <div class="show-grid">
+      {{ range $slug, $data := hugo.Data.podcasts }}
+      <a href="/podcasts/{{ $data.slug }}/" class="show-card">
+        <div class="show-art">
+          {{ if $data.art }}
+          <img src="{{ $data.art }}" alt="{{ $data.name }} podcast cover" loading="lazy" width="200" height="200">
+          {{ else }}
+          <div class="show-art-placeholder">🎙️</div>
+          {{ end }}
+        </div>
+        <div class="show-info">
+          <h3>{{ $data.name }}</h3>
+          <p class="show-author">{{ $data.author }}</p>
+          <span class="cat-badge cat-{{ $data.cat }}">{{ $data.cat }}</span>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Recent episodes</h2>
+    <div class="ep-list">
+      {{ range $slug, $data := hugo.Data.podcasts }}
+        {{ $showName := $data.name }}
+        {{ $showSlug := $data.slug }}
+        {{ $showArt  := $data.art }}
+        {{ range first 2 $data.episodes }}
+        <a href="/podcasts/{{ $showSlug }}/{{ .slug }}/" class="ep-row">
+          <div class="ep-art-sm">
+            {{ if $showArt }}<img src="{{ $showArt }}" alt="" loading="lazy" width="52" height="52">{{ end }}
+          </div>
+          <div class="ep-body">
+            <span class="ep-show">{{ $showName }}</span>
+            <h4>{{ .title }}</h4>
+            <span class="ep-meta">{{ .pubDate }}{{ if .duration }} · {{ .duration }}{{ end }}</span>
+          </div>
+          <div class="ep-arrow">→</div>
+        </a>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ end }}

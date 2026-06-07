@@ -1,0 +1,37 @@
+{{ define "main" }}
+<div class="container">
+  <div class="page-head">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="/podcasts/">Podcasts</a><span>›</span>
+      <span>{{ .Title | title }}</span>
+    </nav>
+    <h1>{{ .Title | title }} Podcasts</h1>
+    <p>{{ .Description }}</p>
+  </div>
+
+  <div class="show-grid show-grid-lg">
+    {{ range .Pages }}
+    {{ $showSlug := .Params.slug }}
+    <a href="{{ .Permalink }}" class="show-card">
+      <div class="show-art">
+        {{ with .Params.art }}
+        <img src="{{ . }}" alt="{{ $.Title }} podcast" loading="lazy" width="200" height="200">
+        {{ else }}
+        <div class="show-art-placeholder">🎙️</div>
+        {{ end }}
+      </div>
+      <div class="show-info">
+        {{ with .Params.categories }}
+        <span class="cat-badge cat-{{ index . 0 }}">{{ index . 0 }}</span>
+        {{ end }}
+        <h2>{{ .Title }}</h2>
+        <p class="show-author">{{ .Params.author }}</p>
+        <p class="show-desc">{{ .Description | truncate 100 }}</p>
+        <span class="ep-count">{{ .Params.episodeCount }} episodes</span>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,15 @@
+{
+  "name": "podwave",
+  "version": "1.0.0",
+  "description": "Podcast directory built with Hugo",
+  "scripts": {
+    "fetch": "node fetch-feeds.js",
+    "build": "node fetch-feeds.js && hugo --minify",
+    "dev": "node fetch-feeds.js && hugo server"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.3.6",
+    "node-fetch": "^3.3.2",
+    "slugify": "^1.6.6"
+  }
+}

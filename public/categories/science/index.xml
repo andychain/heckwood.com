@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Science on Heckwood — Podcast Directory</title>
+		<link>http://localhost:49872/categories/science/</link>
+		<description>Recent content in Science on Heckwood — Podcast Directory</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 04 Jun 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:49872/categories/science/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Huberman Lab Podcast</title>
+				<link>http://localhost:49872/podcasts/huberman-lab/</link>
+				<pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:49872/podcasts/huberman-lab/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,64 @@
+{{ define "main" }}
+
+{{ $showSlug := .Params.slug }}
+{{ $data := index hugo.Data.podcasts $showSlug }}
+
+<div class="container">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/podcasts/">Podcasts</a>
+    <span>›</span>
+    <span>{{ .Title }}</span>
+  </nav>
+
+  <div class="show-hero">
+    <div class="show-hero-art">
+      {{ with .Params.art }}
+      <img src="{{ . }}" alt="{{ $.Title }} podcast artwork" width="200" height="200">
+      {{ end }}
+    </div>
+    <div class="show-hero-info">
+      {{ with .Params.categories }}
+      <span class="cat-badge cat-{{ index . 0 }}">{{ index . 0 }}</span>
+      {{ end }}
+      <h1>{{ .Title }}</h1>
+      <p class="show-author-lg">by {{ .Params.author }}</p>
+      <p class="show-desc-lg">{{ .Description }}</p>
+      <div class="show-meta-row">
+        <span>{{ .Params.episodeCount }} episodes</span>
+        <span>Last updated {{ .Params.lastFetched }}</span>
+      </div>
+      {{ with .Params.feed }}
+      <a href="{{ . }}" class="btn-secondary" target="_blank" rel="noopener">RSS Feed ↗</a>
+      {{ end }}
+    </div>
+  </div>
+
+  {{ with $data }}
+  <div class="ep-section">
+    <h2>All Episodes <span class="ep-count-label">({{ .episodeCount }})</span></h2>
+    <div class="ep-list ep-list-full">
+      {{ range .episodes }}
+      <a href="/podcasts/{{ $showSlug }}/{{ .slug }}/" class="ep-row">
+        <div class="ep-num-col">
+          {{ if .epNum }}<span class="ep-num">Ep. {{ .epNum }}</span>{{ end }}
+          <span class="ep-date">{{ .pubDate }}</span>
+        </div>
+        <div class="ep-body">
+          <h3>{{ .title }}</h3>
+          {{ if .description }}<p class="ep-desc">{{ .description | truncate 140 }}</p>{{ end }}
+        </div>
+        <div class="ep-dur-col">
+          {{ if .duration }}<span class="ep-dur">{{ .duration }}</span>{{ end }}
+          <span class="ep-play-icon">▶</span>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+</div>
+{{ end }}

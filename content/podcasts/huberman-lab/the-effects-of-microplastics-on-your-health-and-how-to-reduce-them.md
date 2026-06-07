@@ -1,0 +1,16 @@
+---
+title: "The Effects of Microplastics on Your Health & How to Reduce Them"
+description: "In this episode, I explain what microplastics are, their prevalence in the human body and environment, and their common sources, as well as their potential nega"
+slug: "the-effects-of-microplastics-on-your-health-and-how-to-reduce-them"
+showName: "Huberman Lab"
+showSlug: "huberman-lab"
+showAuthor: "Andrew Huberman"
+audioUrl: "https://traffic.megaphone.fm/SCIM4809756720.mp3?updated=1742614000"
+pubDate: "2024-10-21"
+duration: "1h 36m"
+durationSec: 5813
+art: "https://megaphone.imgix.net/podcasts/042e6144-725e-11ec-a75d-c38f702aecad/image/ee4f0b7b466ca35620792970d9bce2d2.jpg?ixlib=rails-4.3.1&max-w=3000&max-h=3000&fit=crop&auto=format,compress"
+layout: "episode"
+---
+
+In this episode, I explain what microplastics are, their prevalence in the human body and environment, and their common sources, as well as their potential negative health impacts. I provide practical strategies for limiting exposure to microplastics, nanoplastics, and endocrine disruptors such as b

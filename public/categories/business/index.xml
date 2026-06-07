@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Business on Heckwood — Podcast Directory</title>
+		<link>http://localhost:49872/categories/business/</link>
+		<description>Recent content in Business on Heckwood — Podcast Directory</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 05 Jun 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:49872/categories/business/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Planet Money Podcast</title>
+				<link>http://localhost:49872/podcasts/planet-money/</link>
+				<pubDate>Fri, 05 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:49872/podcasts/planet-money/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>How I Built This Podcast</title>
+				<link>http://localhost:49872/podcasts/how-i-built-this/</link>
+				<pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:49872/podcasts/how-i-built-this/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

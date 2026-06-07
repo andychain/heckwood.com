@@ -1,0 +1,16 @@
+---
+title: "Netflix: Reed Hastings. “We’re Not a Family.” The Provocative Idea That Helped Build a Streaming Giant"
+description: "Netflix shouldn’t have survived. In 1997, Blockbuster owned home entertainment— 9,000 stores , a business fueled by late fees, and a brand that felt untouchable"
+slug: "netflix-reed-hastings-were-not-a-family-the-provocative-idea-that-helped-build-a"
+showName: "How I Built This"
+showSlug: "how-i-built-this"
+showAuthor: "Guy Raz / NPR"
+audioUrl: "https://rss.art19.com/episodes/5a2c7661-da2b-42b4-97f8-ad4b33a76db6.mp3?rss_browser=BAhJIgxNb3ppbGxhBjoGRVQ%3D--4f04cd103bfdd3e94cbbb356ead53321a4d63e94"
+pubDate: "2026-02-09"
+duration: "1h 24m"
+durationSec: 5099
+art: "https://content.production.cdn.art19.com/images/56/ae/46/57/56ae4657-2aa7-4cfc-8ddf-9be24410d5ed/a42755c24a721ea0aaed99c400150d8e67da266430f4bf312684a4bd64e5a1b2f4be14f56746ce0633855e356d7a41a0973d96be2dd0f1d4a174bbe7f456aa4e.jpeg"
+layout: "episode"
+---
+
+Netflix shouldn’t have survived. In 1997, Blockbuster owned home entertainment— 9,000 stores , a business fueled by late fees, and a brand that felt untouchable. Netflix was a scrappy DVD-by-mail experiment that almost sold itself off to stay alive. So how did Netflix win? In this conversation, Reed

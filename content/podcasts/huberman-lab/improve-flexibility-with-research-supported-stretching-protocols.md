@@ -1,0 +1,16 @@
+---
+title: "Improve Flexibility with Research-Supported Stretching Protocols"
+description: "In this episode, I explain the science behind limb range of motion and flexibility and how to increase them by using science-supported protocols. Flexibility is"
+slug: "improve-flexibility-with-research-supported-stretching-protocols"
+showName: "Huberman Lab"
+showSlug: "huberman-lab"
+showAuthor: "Andrew Huberman"
+audioUrl: "https://traffic.megaphone.fm/SCIM4600343438.mp3?updated=1747836456"
+pubDate: "2022-06-13"
+duration: "2h 4m"
+durationSec: 7473
+art: "https://megaphone.imgix.net/podcasts/042e6144-725e-11ec-a75d-c38f702aecad/image/ee4f0b7b466ca35620792970d9bce2d2.jpg?ixlib=rails-4.3.1&max-w=3000&max-h=3000&fit=crop&auto=format,compress"
+layout: "episode"
+---
+
+In this episode, I explain the science behind limb range of motion and flexibility and how to increase them by using science-supported protocols. Flexibility is crucial for physical movements and can help prevent injuries, decrease inflammation, modulate physical and mental pain, impact exercise rec

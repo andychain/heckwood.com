@@ -1,0 +1,22 @@
+baseURL = "https://heckwood.com"
+defaultContentLanguage = "en"
+title = "Heckwood — Podcast Directory"
+enableRobotsTXT = true
+enableEmoji = false
+
+[params]
+  description = "A curated podcast directory. Browse top shows and episodes across tech, science, news, business and more."
+  siteName = "Heckwood"
+  siteURL = "https://heckwood.com"
+
+[taxonomies]
+  category = "categories"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  page = ["HTML"]
+
+[sitemap]
+  changefreq = "daily"
+  priority = 0.5
